@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Pettycash extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'payment_details',
+        'service',
+        'cash_payable',
+        'status'
+    ];
 }
