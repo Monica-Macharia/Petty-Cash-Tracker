@@ -17,10 +17,27 @@ Follow the steps below to set up the project on your local machine.
 
 ### Setup
 
-1. Fork and Clone the repository:
-    cd project
-    php artisan serve
-    npm run dev
+Fork and Clone the repository
+Change to the directory of the cloned repository:
+Install the dependencies:
+composer install
+> npm install
+Check the database connection settings.
+Database configurations are listed in the .env file
+Run the migrations
+> php artisan migrate
+Seed the database
+> php artisan db:seed
+Start the development server:
+> npm run dev
+> php artisan serve
+Open a web browser and go to http://localhost:8000.
+The project should now be running on your local machine.
+
+Additional installations:
+You will need to have Node.js and Composer installed on your computer.
+You will also need to have a MySQL database server running.
+
 
 ### Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
