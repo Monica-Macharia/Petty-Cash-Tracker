@@ -1,4 +1,4 @@
-# College Registration
+# Petty Cash Tracker
 
 This is a project built using Laravel 8 and Vue 3. It showcases the integration of a backend API powered by Laravel and a frontend UI built with Vue.js and Laravel Breeze.
 
