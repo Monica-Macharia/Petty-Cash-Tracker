@@ -123,6 +123,10 @@ const items = reactive({
           <thead>
          
           <tr>
+            <th class="px-6 py-3 bg-gray-50">
+                  <span
+                      class="text-xs font-large tracking-wider leading-4 text-left text-dark">Unique Code</span>
+              </th>
               <th class="px-6 py-3 bg-gray-50">
                   <span
                       class="text-xs font-large tracking-wider leading-4 text-left text-dark">Name</span>
@@ -150,6 +154,9 @@ const items = reactive({
           <tbody class="bg-white divide-y divide-gray-200 divide-solid">
             <template v-for="entry in pettycashes" :key="entry.id">
               <tr class="bg-white">
+                <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
+                  {{ entry.id }}
+                  </td>
                   <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
                   {{ entry.name }}
                   </td>
