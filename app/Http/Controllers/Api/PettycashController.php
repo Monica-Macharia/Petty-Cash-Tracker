@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Pettycash;
 use Illuminate\Http\Request;
+use App\Http\Requests\PettycashRequest;
+use App\Http\Resources\PettycashResource;
 
 class PettycashController extends Controller
 {
@@ -15,7 +17,7 @@ class PettycashController extends Controller
      */
     public function index()
     {
-        //
+        return PettycashResource::collection(PettyCash::all());
     }
 
     /**
@@ -26,7 +28,8 @@ class PettycashController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pettycash = Pettycash::create($request->validated());
+        return new PettycashResource($pettycash);
     }
 
     /**
@@ -37,7 +40,7 @@ class PettycashController extends Controller
      */
     public function show(Pettycash $pettycash)
     {
-        //
+        return new PettycashResource($pettycash)
     }
 
     /**
@@ -49,7 +52,8 @@ class PettycashController extends Controller
      */
     public function update(Request $request, Pettycash $pettycash)
     {
-        //
+        $pettycash->update($request->validated());
+        return new PettycashResource($pettycash);
     }
 
     /**
@@ -60,6 +64,7 @@ class PettycashController extends Controller
      */
     public function destroy(Pettycash $pettycash)
     {
-        //
+        $pettycash->delete();
+        return response()->noContent();
     }
 }
