@@ -55,6 +55,8 @@ const items = reactive({
    
 </script>
 <template>
+    
+    //Form for new payment
     <form class="space-y-6" @submit.prevent="handleFormSubmit">
         <div class="space-y-4 rounded-md shadow-sm">
           
@@ -107,4 +109,65 @@ const items = reactive({
         </button>
         </div>
     </form>
+
+
+    //Payments display table
+  <div class="overflow-hidden overflow-x-auto min-w-full align-middle sm:rounded-md">
+      <div class="flex place-content-end mb-4">
+        
+      </div>
+      
+      <table v-cloak class="min-w-full border divide-y divide-gray-200">
+          <thead>
+         
+          <tr>
+              <th class="px-6 py-3 bg-gray-50">
+                  <span
+                      class="text-xs font-large tracking-wider leading-4 text-left text-dark">Name</span>
+              </th>
+              <th class="px-6 py-3 bg-gray-50">
+                  <span
+                      class="text-xs font-large  tracking-wider leading-4 text-left text-dark">Payment Details</span>
+              </th>
+              <th class="px-6 py-3 bg-gray-50">
+                  <span
+                      class="text-xs font-large  tracking-wider leading-4 text-left text-bold text-dark ">Service</span>
+              </th>
+              <th class="px-6 py-3 bg-gray-50">
+                  <span
+                      class="text-xs font-large  tracking-wider leading-4 text-left text-dark">Cash Payable</span>
+              </th>
+              <th class="px-6 py-3 bg-gray-50">
+                  <span
+                      class="text-xs font-large  tracking-wider leading-4 text-left text-dark">Status</span>
+              </th>
+               
+          </tr>
+          </thead>
+
+          <tbody class="bg-white divide-y divide-gray-200 divide-solid">
+            <template v-for="entry in pettycashes" :key="entry.id">
+              <tr class="bg-white">
+                  <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
+                  {{ entry.name }}
+                  </td>
+                  <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
+                    {{ entry.payment_details }}
+                  </td>
+                  <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
+                     {{ entry.service }}
+                  </td>
+                  <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
+                     {{ entry.cash_payable }}
+                  </td>
+                  <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
+                     {{ entry.status }}
+                  </td>
+                 
+                                
+              </tr>
+            </template>  
+          </tbody>
+      </table>
+  </div>
 </template>
