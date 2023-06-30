@@ -16,3 +16,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+Route::get('/dashboard/customize', function () {
+    return view('customize');
+})->name('dashboard/customize');
+
+require __DIR__.'/auth.php';
+
+Route::view('/{any}', 'login')
+    ->middleware('auth')
+    ->where('any', '.*');
