@@ -171,3 +171,11 @@ const items = reactive({
       </table>
   </div>
 </template>
+<style>
+
+[v-cloak] {
+  display: none;
+}
+
+
+</style>
