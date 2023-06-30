@@ -19,7 +19,7 @@ import axios from "axios";
         const getPettycashes = () => {
             axios.get('http://127.0.0.1:8000/api/pettycashes')
             .then(response => {
-                pettycashes.value = colleges.value.concat(response.data.data);
+                pettycashes.value = pettycashes.value.concat(response.data.data);
             });
         };
 
@@ -84,7 +84,7 @@ import axios from "axios";
 </script>
 <template>
 
-    //Form for editing payment
+  
     <form class="space-y-6" @submit.prevent="handleEdit">
         <div class="space-y-4 rounded-md shadow-sm">
           
@@ -139,7 +139,7 @@ import axios from "axios";
     </form>
 
 
-    //Payments display table that allows row selection and entry deletion
+  
   <div class="overflow-hidden overflow-x-auto min-w-full align-middle sm:rounded-md">
       <div class="flex place-content-end mb-4">
         

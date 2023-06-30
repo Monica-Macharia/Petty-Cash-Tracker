@@ -39,12 +39,14 @@ const items = reactive({
         const getPettycashes = () => {
             axios.get('http://127.0.0.1:8000/api/pettycashes')
             .then(response => {
-                pettycashes.value = colleges.value.concat(response.data.data);
+                pettycashes.value = pettycashes.value.concat(response.data.data);
             });
         };
 
-        onMounted(getPettycashes);
+    
 
+        onMounted(getPettycashes);
+        console.log(pettycashes)
         return{
             pettycashes,
             items,
@@ -56,7 +58,7 @@ const items = reactive({
 </script>
 <template>
     
-    //Form for new payment
+   
     <form class="space-y-6" @submit.prevent="handleFormSubmit">
         <div class="space-y-4 rounded-md shadow-sm">
           
@@ -111,7 +113,7 @@ const items = reactive({
     </form>
 
 
-    //Payments display table
+   
   <div class="overflow-hidden overflow-x-auto min-w-full align-middle sm:rounded-md">
       <div class="flex place-content-end mb-4">
         

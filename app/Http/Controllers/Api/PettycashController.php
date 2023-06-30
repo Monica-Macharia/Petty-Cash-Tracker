@@ -17,8 +17,7 @@ class PettycashController extends Controller
      */
     public function index()
     {
-        //created a CollegeResource component to control the return
-        //returning an array.
+        
        return PettycashResource::collection(Pettycash::all());
     }
 
@@ -30,7 +29,7 @@ class PettycashController extends Controller
      */
     public function store(PettycashRequest $request)
     {
-        //created CollegeRequest
+        
         $pettycash= Pettycash::create($request->validated());
         return new PettycashResource($pettycash);
     }
