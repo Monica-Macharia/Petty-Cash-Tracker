@@ -1,4 +1,5 @@
 # Petty Cash Tracker
+[Screencast from 30-06-2023  5:08:48 WB.webm](https://github.com/Monica-Macharia/Petty-Cash-Tracker/assets/106350290/94f8cf6d-7a5d-42ed-a3e5-640871efc205)
 
 This is a project built using Laravel 8 and Vue 3. It showcases the integration of a backend API powered by Laravel and a frontend UI built with Vue.js and Laravel Breeze.
 
