@@ -40,7 +40,7 @@ class PettycashController extends Controller
      */
     public function show(Pettycash $pettycash)
     {
-        return new PettycashResource($pettycash)
+        return new PettycashResource($pettycash);
     }
 
     /**
