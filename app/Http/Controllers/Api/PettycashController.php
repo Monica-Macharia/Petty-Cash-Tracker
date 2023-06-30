@@ -17,7 +17,9 @@ class PettycashController extends Controller
      */
     public function index()
     {
-        return PettycashResource::collection(PettyCash::all());
+        //created a CollegeResource component to control the return
+        //returning an array.
+       return PettycashResource::collection(Pettycash::all());
     }
 
     /**
@@ -26,17 +28,17 @@ class PettycashController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PettycashRequest $request)
     {
-        $pettycash = Pettycash::create($request->validated());
+        //created CollegeRequest
+        $pettycash= Pettycash::create($request->validated());
         return new PettycashResource($pettycash);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Pettycash  $pettycash
-     * @return \Illuminate\Http\Response
+     * 
      */
     public function show(Pettycash $pettycash)
     {
@@ -46,22 +48,15 @@ class PettycashController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Pettycash  $pettycash
-     * @return \Illuminate\Http\Response
+     * 
      */
-    public function update(Request $request, Pettycash $pettycash)
+    public function update(PettycashRequest $request, Pettycash $pettycash)
     {
         $pettycash->update($request->validated());
         return new PettycashResource($pettycash);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Pettycash  $pettycash
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy(Pettycash $pettycash)
     {
         $pettycash->delete();

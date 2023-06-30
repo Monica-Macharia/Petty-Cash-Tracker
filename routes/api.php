@@ -18,4 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('pettycashes', \App\Http\Controllers\Api\PettycashController::class);
+Route::get('pettycashes', 'App\Http\Controllers\Api\PettycashController@index');
+Route::post('pettycashes', 'App\Http\Controllers\Api\PettycashController@store');
+Route::put('pettycashes/{pettycash}', 'App\Http\Controllers\Api\PettycashController@update');
+Route::delete('pettycashes/{pettycash}', 'App\Http\Controllers\Api\PettycashController@destroy');
