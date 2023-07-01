@@ -17,21 +17,24 @@ Follow the steps below to set up the project on your local machine.
 
 ### Setup
 
-Fork and Clone the repository
-Change to the directory of the cloned repository:
-Install the dependencies:
-composer install
-> npm install
-Check the database connection settings.
-Database configurations are listed in the .env file
-Run the migrations
-> php artisan migrate
-Seed the database
-> php artisan db:seed
-Start the development server:
-> npm run dev
-> php artisan serve
-Open a web browser and go to http://localhost:8000.
+#### Fork the repository
+#### Click Code button and copy the HTTPs url.
+#### git clone using the url
+#### Change to the directory of the cloned repository
+### Install the laravel and breeze dependencies:
+```
+ composer install
+ php artisan breeze:install
+ php artisan migrate
+ php artisan db:seed
+ php artisan serve
+```
+### install vue dependencies in a different terminal
+```
+ npm install
+ npm run dev 
+```
+### Open a web browser and go to http://localhost:8000.
 The project should now be running on your local machine.
 
 Additional installations:
